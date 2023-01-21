@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: #0190ef url("/image/jelly.jpg");
+  background-size: cover;
+}
+
+.clock {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 50px;
+  border: 20px solid #ffffff;
+  border-radius: 50%;
+}
+
+.hand {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  width: 5px;
+  height: 160px;
+  -webkit-transition: all 0.05s;
+  transition: all 0.05s;
+  -webkit-transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+          transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour-hand {
+  height: 120px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-color: #ff0000;
+}
+
+.minute-hand {
+  height: 160px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-color: #00ff00;
+}
+
+.seconds-hand {
+  height: 160px;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  background-color: #000000;
+}

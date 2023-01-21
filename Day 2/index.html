@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>JS + CSS Clock</title>
+</head>
+<body class="container">
+    <div class="clock">
+        <div class="hand hour-hand"></div>
+        <div class="hand minute-hand"></div>
+        <div class="hand seconds-hand"></div>
+    </div>
+
+    <script >
+        const hourHand = document.querySelector(".hour-hand");
+        const minuteHand = document.querySelector(".minute-hand");
+        const secondsHand = document.querySelector(".seconds-hand");
+        const alarm = new Audio('Audio/Stomp music intro.mp3');
+
+        const date = new Date;
+        const hour = date.getHours() % 12;
+        const minute = date.getMinutes();
+        const seconds = date.getSeconds();
+
+        const startAlarm = () => {
+            if (minute==0) {
+                alarm.play();
+                console.log("Yes")
+            }
+        }
+
+        const setTime = () => {
+            const date = new Date;
+            const hour = date.getHours() % 12;
+            const minute = date.getMinutes();
+            const seconds = date.getSeconds();
+
+            let hourDegrees = 180 + (hour*30) + (((minute*60) + seconds) * (30/3600))
+            let minuteDegrees = 180 + (minute*6) + ((seconds*6) / 60)
+            let secondsDegrees = 180 + (seconds*6)
+
+            // console.log(date)
+            // console.log(hour)
+            // console.log(minute)
+            // console.log(seconds)
+            // console.log(hourDegrees)
+
+            hourHand.style.transform = `rotate(${hourDegrees}deg)`;
+            minuteHand.style.transform = `rotate(${minuteDegrees}deg)`;
+            secondsHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+            startAlarm();
+
+        }
+
+        setTime();
+
+        setInterval(setTime, 1000);
+
+    </script>
+
+</body>
+</html>

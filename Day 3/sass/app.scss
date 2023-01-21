@@ -1,0 +1,58 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(45deg, #42a5f5 0%,#478ed1 50%,#0d47a1 100%);
+    background-repeat: no-repeat;
+    font-family: 'Inconsolata', monospace;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    .timer-button {
+        width: 16%;
+        padding: 1rem;
+        font-size: 1rem;
+        color: #ffffff;
+        cursor: pointer;
+        text-align: center;
+        text-transform: uppercase;
+        background: rgba(0,0,0,0.1);
+        border-bottom: 3px solid rgba(0,0,0,0.2);
+        border-right: 1px solid rgba(0,0,0,0.2);
+        font-family: 'Inconsolata', monospace;
+        &:hover {
+            background: rgba(0,0,0,0.2);
+        }
+    }
+    
+}
+form {
+    display: flex;
+    flex: 1;
+}
+input {
+    width: 100%;
+    padding: 10px;
+}
+
+.countdown-timer {
+    color: #ffffff;
+    font-size: 8rem;
+    width: max-content;
+    margin: 5rem auto;
+}
+
+.countdown-end {
+    color: #ffffff;
+    font-size: 1.5rem;
+    width: max-content;
+    margin: auto;
+}
